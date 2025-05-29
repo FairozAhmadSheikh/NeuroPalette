@@ -32,7 +32,8 @@ class ContentLoss(nn.Module):
     def forward(self, x):
         self.loss = nn.functional.mse_loss(x, self.target)
         return x
-    class StyleLoss(nn.Module):
+
+class StyleLoss(nn.Module):
     def __init__(self, target_feature):
         super().__init__()
         self.target = self.gram_matrix(target_feature).detach()
@@ -96,3 +97,22 @@ def stylize_image(content_path, style_path):
 
     style_weight = 1e6
     content_weight = 1
+
+    run = [0]
+    while run[0] <= 200:
+        def closure():
+            optimizer.zero_grad()
+            model(input_img)
+            style_score = sum([sl.loss for sl in style_losses])
+            content_score = sum([cl.loss for cl in content_losses])
+            loss = style_weight * style_score + content_weight * content_score
+            loss.backward()
+            run[0] += 1
+            return loss
+        optimizer.step(closure)
+
+    output_img = im_convert(input_img)
+    output_name = f'static/uploads/output_{uuid.uuid4().hex[:6]}.jpg'
+    output_img.save(output_name)
+
+    return output_name
