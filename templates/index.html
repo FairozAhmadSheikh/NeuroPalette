@@ -7,7 +7,7 @@
 </head>
 <body class="bg-dark text-white">
 <div class="container py-5">
-    <h1 class="text-center mb-4">🎨 AI ArtStyle Transfer</h1>
+    <h1 class="text-center mb-4"> AI ArtStyle Transfer</h1>
     <form method="POST" enctype="multipart/form-data" class="mb-5">
         <div class="row mb-3">
             <div class="col">
@@ -22,4 +22,22 @@
         <button class="btn btn-primary w-100">Generate Stylized Image</button>
     </form>
 
-    
+    {% if output %}
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h5>Content</h5>
+            <img src="{{ content }}" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-4">
+            <h5>Style</h5>
+            <img src="{{ style }}" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-4">
+            <h5>Output</h5>
+            <img src="{{ output }}" class="img-fluid rounded shadow border border-3 border-success">
+        </div>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
