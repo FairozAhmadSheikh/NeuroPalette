@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArtStyle Transfer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+<div class="container py-5">
+    <h1 class="text-center mb-4">🎨 AI ArtStyle Transfer</h1>
+    <form method="POST" enctype="multipart/form-data" class="mb-5">
+        <div class="row mb-3">
+            <div class="col">
+                <label>Upload Content Image</label>
+                <input type="file" name="content" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Upload Style Image</label>
+                <input type="file" name="style" class="form-control" required>
+            </div>
+        </div>
+        <button class="btn btn-primary w-100">Generate Stylized Image</button>
+    </form>
+
+    
