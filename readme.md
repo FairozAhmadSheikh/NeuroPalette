@@ -6,9 +6,9 @@ Upload a content image and a style image
 
 Generate a stylized output image using PyTorch & VGG19
 
-Modern Bootstrap-based UI
+Modern Bootstrap-based UI 
 
-Responsive layout and image previews
+Responsive layout and image previews (Making it adjust for different screensizes)
 
 Built with ❤️ by Fairoz Ahmad Sheikh
 
