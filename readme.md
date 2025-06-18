@@ -33,9 +33,11 @@ Then open http://localhost:5000 in your browser.
 
 ### Contact
     GitHub: @FairozAhmadSheikh
+    
+    Instagram:@ahmmadferoz
 
     LinkedIn: linkedin.com/in/yourprofile
 
 
 ### 🌟 Star this repo if you like it!
-Thanks For Your Intest Pull Requests are Always Welcome
+Thanks For Your Intest Pull Requests are Always Welcome 
